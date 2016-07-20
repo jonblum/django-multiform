@@ -200,7 +200,7 @@ class MultiForm(BaseForm):
         return mark_safe('\n'.join(rendered))
 
     def non_field_errors(self):
-        return self._combine('non_field_errors', call=True, filter=True)
+        return self._combine_chain('non_field_errors', call=True, filter=True)
 
     def full_clean(self):
         # This will call full_clean on all sub-forms
